@@ -1,0 +1,19 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+        <ion-title> Blank </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+    <div id="container">
+        <div style="height: 70vh">
+            <pintura-editor
+                [src]="inlineSrc"
+                [options]="editorOptions"
+                (load)="handleInlineLoad($event)"
+                (process)="handleInlineProcess($event)"
+            ></pintura-editor>
+        </div>
+        <p><img *ngIf="inlineResult" [src]="inlineResult" alt="" /></p>
+    </div>
+</ion-content>
